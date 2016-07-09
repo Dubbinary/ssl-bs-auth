@@ -1,5 +1,6 @@
-venv
+venv2
 *.pyc
 staticfiles
 .env
 .idea
+keys
