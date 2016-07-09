@@ -3,10 +3,10 @@ from flask import render_template
 from auth.basic_auth import requires_auth
 import os
 
-from OpenSSL import SSL
-context = SSL.Context(SSL.SSLv23_METHOD)
-context.use_privatekey_file('keys/server.key')
-context.use_certificate_file('keys/server.crt')
+# from OpenSSL import SSL
+# context = SSL.Context(SSL.SSLv23_METHOD)
+# context.use_privatekey_file('keys/server.key')
+# context.use_certificate_file('keys/server.crt')
 
 app = Flask(__name__)
 
@@ -31,4 +31,4 @@ def do_export():
         return "On export link. NO JSON"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port='5000', debug=True, ssl_context=context)
+    app.run(host='0.0.0.0', port='5000', debug=True)
