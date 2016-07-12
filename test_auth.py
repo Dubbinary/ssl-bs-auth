@@ -7,7 +7,7 @@ def init_localhost_test():
     host = "localhost:5000"
     url_import = "http://%s/import" % host
     url_export = "http://%s/export" % host
-    url_generate = "http://%s/export" % host
+    url_generate = "http://%s/generate" % host
 
 #Iinitiatin variables for testing Heroku hosted server
 def init_hosted_test():
@@ -15,10 +15,10 @@ def init_hosted_test():
     host = "ssl-bs-auth.herokuapp.com"
     url_import = "https://%s/import" % host
     url_export = "https://%s/export" % host
-    url_generate = "https://%s/export" % host
+    url_generate = "https://%s/generate" % host
 
-# init_hosted_test()
-init_localhost_test()
+init_hosted_test()
+# init_localhost_test()
 
 #User and password for Basic HTTP Authentification
 user = "admin"
