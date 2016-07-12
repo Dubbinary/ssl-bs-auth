@@ -10,10 +10,11 @@ app = Flask(__name__)
 def getIndex():
     return render_template('index.html')
 
-#Resolving import url with GET method
-@app.route('/import', methods=['GET'])
+#Resolving request to send data with which model
+#would be generated
+@app.route('/generate', methods=['GET'])
 @requires_auth  #Requires Basic HTTP Authentication
-def do_import():
+def do_generate():
 
     #Building json with required data for ML module
     #
@@ -25,14 +26,23 @@ def do_import():
     #       "<id>": "<encoded_html>"
     #   }
     #}
-    test_json = {
+    generetion_json = {
                 "csv":  util.data_loader.load_data("data/test_projectsALL.csv"),
                 "htmls": {"12438": util.data_loader.load_data("data/12438.html"),
                           "15270": util.data_loader.load_data("data/15270.html")},
                 }
-    return jsonify(**test_json)
+    return jsonify(**generetion_json)
 
-#Resolving import url with POST method
+#resolving request to get import data
+@app.route('/import', methods=['GET'])
+@requires_auth
+def do_import():
+    import_json = {
+        "Title": "There must be imported data!"
+    }
+    return jsonify(**import_json)
+
+#Resolving request to receive prediction result
 @app.route('/export', methods=['POST'])
 @requires_auth
 def do_export():
