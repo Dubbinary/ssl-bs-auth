@@ -17,8 +17,8 @@ def init_hosted_test():
     url_export = "https://%s/export" % host
     url_generate = "https://%s/generate" % host
 
-init_hosted_test()
-# init_localhost_test()
+# init_hosted_test()
+init_localhost_test()
 
 #User and password for Basic HTTP Authentification
 user = "admin"
@@ -70,5 +70,3 @@ json_to_send = {'Key': 'Value here'}    #Test json to send on server
 res = requests.post(url_export, data=json.dumps(json_to_send),auth=HTTPBasicAuth(user, password),headers={'Content-Type': 'application/json'})
 print "RESPONSE STATUS CODE: ", res.status_code
 print "RESPONSE TEXT: \n\t", res.text
-
-

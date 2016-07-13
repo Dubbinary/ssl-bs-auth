@@ -40,15 +40,15 @@ def do_import():
     import_json = {
         "13355": util.data_loader.load_data("data/13355.html"),
         "13356": util.data_loader.load_data("data/13356.html"),
-        "13357": util.data_loader.load_data("data/13357.html"),
         "13358": util.data_loader.load_data("data/13358.html"),
         "13359": util.data_loader.load_data("data/13359.html"),
         "13360": util.data_loader.load_data("data/13360.html"),
         "13361": util.data_loader.load_data("data/13361.html"),
-        "13362": util.data_loader.load_data("data/13362.html"),
         "13363": util.data_loader.load_data("data/13363.html"),
         "13364": util.data_loader.load_data("data/13364.html"),
         "13365": util.data_loader.load_data("data/13365.html"),
+        "13371": util.data_loader.load_data("data/13371.html"),
+        "13372": util.data_loader.load_data("data/13372.html"),
     }
     return jsonify(**import_json)
 
