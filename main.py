@@ -38,7 +38,17 @@ def do_generate():
 @requires_auth
 def do_import():
     import_json = {
-        "Title": "There must be imported data!"
+        "13355": util.data_loader.load_data("data/13355.html"),
+        "13356": util.data_loader.load_data("data/13356.html"),
+        "13357": util.data_loader.load_data("data/13357.html"),
+        "13358": util.data_loader.load_data("data/13358.html"),
+        "13359": util.data_loader.load_data("data/13359.html"),
+        "13360": util.data_loader.load_data("data/13360.html"),
+        "13361": util.data_loader.load_data("data/13361.html"),
+        "13362": util.data_loader.load_data("data/13362.html"),
+        "13363": util.data_loader.load_data("data/13363.html"),
+        "13364": util.data_loader.load_data("data/13364.html"),
+        "13365": util.data_loader.load_data("data/13365.html"),
     }
     return jsonify(**import_json)
 
@@ -48,9 +58,9 @@ def do_import():
 def do_export():
     if request.json:
         resiveed_json = request.json
-        return "*OK: JSON HAS BEEN RESIVED ON SERVER: %s" % resiveed_json
+        return "*OK: JSON HAS BEEN RECEIVED ON SERVER: %s" % resiveed_json
     else:
-        return "*WARNING: NO JSON RESIVED ON SERVER"
+        return "*WARNING: NO JSON RECEIVED ON SERVER"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='5000', debug=True)
