@@ -17,8 +17,8 @@ def init_hosted_test():
     url_export = "https://%s/export" % host
     url_generate = "https://%s/generate" % host
 
-# init_hosted_test()
-init_localhost_test()
+init_hosted_test()
+# init_localhost_test()
 
 #User and password for Basic HTTP Authentification
 user = "admin"
